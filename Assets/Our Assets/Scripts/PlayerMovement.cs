@@ -1,9 +1,8 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovement : Movement
 {
-    [SerializeField] private float _moveSpeed = 5f; // Adjust this value to change movement speed
     [SerializeField] private float _rotationSpeed = 10f;
     [SerializeField] private float _walkingRotation = 45f;
     [SerializeField] private Transform _playerModel;

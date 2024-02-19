@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 768942958445047721}
   - component: {fileID: 4888134791807565326}
   - component: {fileID: 2502156189865885996}
+  - component: {fileID: 4319151613134744937}
+  - component: {fileID: 1105753196548474061}
   m_Layer: 0
   m_Name: EnemyTree
   m_TagString: Untagged
@@ -68,9 +70,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66c776c65d255944da7e5203e4b806ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _detectionRadius: 7
-  _followRadius: 10
-  _speed: 1
+  _moveSpeed: 1
+--- !u!114 &4319151613134744937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 823510815266158874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09b1b3f2b9ac65e44af892b39940fb43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _detectionRadius: 5
+  _followRadius: 7
+--- !u!114 &1105753196548474061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 823510815266158874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70a6b7a4a7e1e584b98f76bd99dd5099, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1493281093736018394
 GameObject:
   m_ObjectHideFlags: 0
