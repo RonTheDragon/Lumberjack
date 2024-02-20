@@ -19,4 +19,10 @@ public class EnemyMovement : Movement
     {
         _agent.SetDestination(transform.position);
     }
+
+    protected override void OnMovementSpeedChanged()
+    {
+        base.OnMovementSpeedChanged();
+        _agent.speed = _moveSpeed;
+    }
 }
