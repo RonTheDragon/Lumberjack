@@ -9,6 +9,8 @@ public class PlayerAttack : MonoBehaviour
 
     public void Attack()
     {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
         // Calculate the position in front of the player for the sphere overlap
         Vector3 attackPosition = _playerModel.position + _playerModel.forward * _attackDistance;
 
