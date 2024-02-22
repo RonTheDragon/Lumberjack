@@ -4,6 +4,8 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     private PlayerMovement _playerMovement => GetComponent<PlayerMovement>();
+    private PlayerCrosshair _playerCrosshair => GetComponent<PlayerCrosshair>();
+
     private PlayerRotation _playerRotation => GetComponent<PlayerRotation>();
     private PlayerCameraControl _playerCameraControl => GetComponent<PlayerCameraControl>();
 
@@ -22,23 +24,25 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         CalculateMoveDirectionWithOffset();
-        CalculateLookDirectionWithOffset();
 
         _playerMovement.Move(moveDirection);
+        _playerCrosshair.Move(_lookInput);
+
+        CalculateRotationWithOffset();
+
         _playerRotation.RotateToFaceDirection(_playerModel, lookDirection);
+
         _playerCameraControl.MoveCamera(_playerModel);
     }
 
     private void CalculateMoveDirectionWithOffset()
     {
-        moveDirection = new Vector3(-_moveInput.x, 0f, _moveInput.y).normalized;
-        moveDirection = Quaternion.Euler(0, _rotationOffset, 0) * moveDirection;
+        moveDirection = Quaternion.Euler(0, _rotationOffset, 0) * new Vector3(-_moveInput.x, 0f, _moveInput.y).normalized;
     }
 
-    private void CalculateLookDirectionWithOffset()
+    private void CalculateRotationWithOffset()
     {
-        lookDirection = new Vector3(-_lookInput.x, 0f, _lookInput.y);
-        //lookDirection = Quaternion.Euler(0, _rotationOffset, 0) * lookDirection;
+        lookDirection = Quaternion.Euler(0, 0, _rotationOffset) * _playerCrosshair.GetCrosshairDirection(); ;
     }
 
     public void OnMoveForward(InputAction.CallbackContext context)
@@ -53,11 +57,11 @@ public class PlayerController : MonoBehaviour
 
     public void OnLookUpDown(InputAction.CallbackContext context)
     {
-        _lookInput.x = context.ReadValue<float>();
+        _lookInput.y = -context.ReadValue<float>();
     }
 
     public void OnLookSideways(InputAction.CallbackContext context)
     {
-        _lookInput.y = context.ReadValue<float>();
+        _lookInput.x = context.ReadValue<float>();
     }
 }
