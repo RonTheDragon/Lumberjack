@@ -7,7 +7,7 @@ public abstract class Movement : MonoBehaviour
     private float _originalMoveSpeed;
     private float _currentDuration;
 
-    protected virtual void Update()
+    protected void Update()
     {
         HandleMovementModification();
     }

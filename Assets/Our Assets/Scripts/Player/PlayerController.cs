@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
     private PlayerCrosshair _playerCrosshair => GetComponent<PlayerCrosshair>();
     private PlayerRotation _playerRotation => GetComponent<PlayerRotation>();
     private PlayerCameraControl _playerCameraControl => GetComponent<PlayerCameraControl>();
+    private PlayerAttackManager _playerAttackManager => GetComponent<PlayerAttackManager>();    
     
     [SerializeField] private Transform _playerModel;
 
@@ -68,15 +69,11 @@ public class PlayerController : MonoBehaviour
     {
         if (context.phase == InputActionPhase.Started)
         {
-            // Input action started (button pressed)
-            Debug.Log("Melee attack button pressed");
-            // Add any other logic you want to execute when the button is pressed
+            _playerAttackManager.OnMeleePress();
         }
         else if (context.phase == InputActionPhase.Canceled)
         {
-            // Input action canceled (button released)
-            Debug.Log("Melee attack button released");
-            // Add any other logic you want to execute when the button is released
+            _playerAttackManager.OnMeleeRelease();
         }
     }
 }
