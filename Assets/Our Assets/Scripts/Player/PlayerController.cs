@@ -5,10 +5,9 @@ public class PlayerController : MonoBehaviour
 {
     private PlayerMovement _playerMovement => GetComponent<PlayerMovement>();
     private PlayerCrosshair _playerCrosshair => GetComponent<PlayerCrosshair>();
-
     private PlayerRotation _playerRotation => GetComponent<PlayerRotation>();
     private PlayerCameraControl _playerCameraControl => GetComponent<PlayerCameraControl>();
-
+    
     [SerializeField] private Transform _playerModel;
 
     [SerializeField] private float _rotationOffset = 45f;
@@ -63,5 +62,21 @@ public class PlayerController : MonoBehaviour
     public void OnLookSideways(InputAction.CallbackContext context)
     {
         _lookInput.x = context.ReadValue<float>();
+    }
+
+    public void OnMeleeAttack(InputAction.CallbackContext context)
+    {
+        if (context.phase == InputActionPhase.Started)
+        {
+            // Input action started (button pressed)
+            Debug.Log("Melee attack button pressed");
+            // Add any other logic you want to execute when the button is pressed
+        }
+        else if (context.phase == InputActionPhase.Canceled)
+        {
+            // Input action canceled (button released)
+            Debug.Log("Melee attack button released");
+            // Add any other logic you want to execute when the button is released
+        }
     }
 }

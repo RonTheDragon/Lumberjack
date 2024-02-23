@@ -131,8 +131,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_ActionId: 660b3035-ddf3-4a89-be44-0853fe3a008d
-    m_ActionName: Move/Walk Forward[/Keyboard/s,/Keyboard/w,/XInputControllerWindows1/leftStick/down,/XInputControllerWindows2/leftStick/down,/XInputControllerWindows3/leftStick/down,/XInputControllerWindows/leftStick/down,/XInputControllerWindows1/leftStick/up,/XInputControllerWindows2/leftStick/up,/XInputControllerWindows3/leftStick/up,/XInputControllerWindows/leftStick/up]
+    m_ActionId: 4b5bb504-115d-49c3-9052-46703250ba08
+    m_ActionName: Player/Walk Forward[/Keyboard/s,/Keyboard/w,/XInputControllerWindows/leftStick/down,/XInputControllerWindows1/leftStick/down,/XInputControllerWindows2/leftStick/down,/XInputControllerWindows3/leftStick/down,/XInputControllerWindows/leftStick/up,/XInputControllerWindows1/leftStick/up,/XInputControllerWindows2/leftStick/up,/XInputControllerWindows3/leftStick/up]
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1307816645839431546}
@@ -147,24 +147,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_ActionId: 7095ae8b-56e2-460e-a86d-22cfc4f95abf
-    m_ActionName: Move/Walk Sideways[/Keyboard/a,/Keyboard/d,/XInputControllerWindows1/leftStick/left,/XInputControllerWindows2/leftStick/left,/XInputControllerWindows3/leftStick/left,/XInputControllerWindows/leftStick/left,/XInputControllerWindows1/leftStick/up,/XInputControllerWindows2/leftStick/up,/XInputControllerWindows3/leftStick/up,/XInputControllerWindows/leftStick/up]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2190001925204716390}
-        m_TargetAssemblyTypeName: PlayerAttack, Assembly-CSharp
-        m_MethodName: Attack
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: bbeeb433-34c2-408d-9b98-ea7f5ce45852
-    m_ActionName: Move/Melee Attack[/Mouse/leftButton,/XInputControllerWindows/rightTrigger,/XInputControllerWindows1/rightTrigger,/XInputControllerWindows2/rightTrigger,/XInputControllerWindows3/rightTrigger]
+    m_ActionId: 0369c867-b232-4247-bd43-ee61d25fb0bf
+    m_ActionName: Player/Walk Sideways[/Keyboard/a,/Keyboard/d,/XInputControllerWindows/leftStick/left,/XInputControllerWindows1/leftStick/left,/XInputControllerWindows2/leftStick/left,/XInputControllerWindows3/leftStick/left,/XInputControllerWindows/leftStick/right,/XInputControllerWindows1/leftStick/right,/XInputControllerWindows2/leftStick/right,/XInputControllerWindows3/leftStick/right]
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1307816645839431546}
@@ -179,8 +163,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_ActionId: fe0aa286-dccf-498a-ac8d-6258922da3c8
-    m_ActionName: Move/Look Up Down[/Mouse/delta/down,/Mouse/delta/up,/XInputControllerWindows/rightStick/down,/XInputControllerWindows1/rightStick/down,/XInputControllerWindows2/rightStick/down,/XInputControllerWindows3/rightStick/down,/XInputControllerWindows/rightStick/up,/XInputControllerWindows1/rightStick/up,/XInputControllerWindows2/rightStick/up,/XInputControllerWindows3/rightStick/up]
+    m_ActionId: 063a6288-002a-4bcf-9f07-ec5d77a06177
+    m_ActionName: Player/Look Up Down[/Mouse/delta/down,/Mouse/delta/up,/XInputControllerWindows/rightStick/down,/XInputControllerWindows1/rightStick/down,/XInputControllerWindows2/rightStick/down,/XInputControllerWindows3/rightStick/down,/XInputControllerWindows/rightStick/up,/XInputControllerWindows1/rightStick/up,/XInputControllerWindows2/rightStick/up,/XInputControllerWindows3/rightStick/up]
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1307816645839431546}
@@ -195,11 +179,27 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_ActionId: 5126cb3d-4b0b-424d-bffd-511019461513
-    m_ActionName: Move/Look Sideways[/Mouse/delta/left,/Mouse/delta/right,/XInputControllerWindows/rightStick/left,/XInputControllerWindows1/rightStick/left,/XInputControllerWindows2/rightStick/left,/XInputControllerWindows3/rightStick/left]
+    m_ActionId: db1af7c1-deae-49ed-80cd-b50ae9497540
+    m_ActionName: Player/Look Sideways[/Mouse/delta/left,/Mouse/delta/right,/XInputControllerWindows/rightStick/left,/XInputControllerWindows1/rightStick/left,/XInputControllerWindows2/rightStick/left,/XInputControllerWindows3/rightStick/left,/XInputControllerWindows/rightStick/right,/XInputControllerWindows1/rightStick/right,/XInputControllerWindows2/rightStick/right,/XInputControllerWindows3/rightStick/right]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1307816645839431546}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: OnMeleeAttack
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 3b5db04e-c35f-4ad9-94b3-13892934c616
+    m_ActionName: Player/Melee Attack[/Mouse/leftButton,/XInputControllerWindows/rightTrigger,/XInputControllerWindows1/rightTrigger,/XInputControllerWindows2/rightTrigger,/XInputControllerWindows3/rightTrigger]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: Move
+  m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 8070248442861471684}
 --- !u!114 &1307816645839431546
