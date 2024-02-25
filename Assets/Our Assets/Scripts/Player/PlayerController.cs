@@ -76,4 +76,16 @@ public class PlayerController : MonoBehaviour
             _playerAttackManager.OnMeleeRelease();
         }
     }
+
+    public void OnRangeAttack(InputAction.CallbackContext context)
+    {
+        if (context.phase == InputActionPhase.Started)
+        {
+            _playerAttackManager.OnRangedPress();
+        }
+        else if (context.phase == InputActionPhase.Canceled)
+        {
+            _playerAttackManager.OnRangedRelease();
+        }
+    }
 }

@@ -1,5 +1,5 @@
 {
-    "name": "PlayerControls",
+    "name": "Player Input Actions",
     "maps": [
         {
             "name": "Player",
@@ -45,6 +45,15 @@
                     "name": "Melee Attack",
                     "type": "Button",
                     "id": "3b5db04e-c35f-4ad9-94b3-13892934c616",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Range Attack",
+                    "type": "Button",
+                    "id": "f5b2e06f-6178-40aa-a97d-d632bc6b2aca",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -120,6 +129,39 @@
                 },
                 {
                     "name": "1D Axis",
+                    "id": "e21904c9-e207-49db-96c4-66dec46cdbbc",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Walk Forward",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "negative",
+                    "id": "d805ccca-0d00-4402-9e6e-1ef788e8775e",
+                    "path": "<Gamepad>/dpad/down",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Controller",
+                    "action": "Walk Forward",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "1f05d008-8fae-44a6-8174-d0acb4edd52f",
+                    "path": "<Gamepad>/dpad/up",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Controller",
+                    "action": "Walk Forward",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "1D Axis",
                     "id": "3e69f324-b6e8-43e4-90f6-0e0ce87e9103",
                     "path": "1DAxis",
                     "interactions": "",
@@ -177,6 +219,39 @@
                     "name": "positive",
                     "id": "2a1c116a-efe2-41d8-80e1-692c092ff112",
                     "path": "<Gamepad>/leftStick/right",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Controller",
+                    "action": "Walk Sideways",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "1D Axis",
+                    "id": "01155bf9-49c5-4818-8d82-885a196f0799",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Walk Sideways",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "negative",
+                    "id": "bd6755f8-421d-4189-b47e-9b7c8b5e6810",
+                    "path": "<Gamepad>/dpad/left",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Controller",
+                    "action": "Walk Sideways",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "faec6d7c-0be5-476e-aff9-f322bd114eee",
+                    "path": "<Gamepad>/dpad/right",
                     "interactions": "",
                     "processors": "",
                     "groups": "Controller",
@@ -337,6 +412,28 @@
                     "action": "Look Sideways",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "826e6a59-b275-4f43-a886-26acbbd31b67",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "KeyBoard",
+                    "action": "Range Attack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "14375cb3-4770-4555-8129-4476a75c4c78",
+                    "path": "<Gamepad>/leftTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Controller",
+                    "action": "Range Attack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }

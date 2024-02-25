@@ -5,52 +5,44 @@ public class Axe : Weapon
     [SerializeField] private PlayerAttack[] _axeCombo = new PlayerAttack[3];
     [SerializeField] private PlayerAttack _axeCharged;
     [SerializeField] private MeleeHitbox _hitCollider;
-    [SerializeField] private float _maxCharge;
-    private float _charge;
-    private bool _isHeldDown;
     private int _currentCombo;
-    private float _currentCooldown;
+    [SerializeField] private float _loseComboTime=0.5f;
+    private float _comboTimeLeft;
 
-    private void Update()
+    protected new void Update()
     {
-        WeaponCharging();
-        WeaponCooldownTime();
+        base.Update();
+        ComboTimer();
     }
 
-    private void WeaponCharging()
+    private void ComboTimer()
     {
-        if (_isHeldDown && _charge< _maxCharge)
+        if (_currentCombo > 0)
         {
-            _charge += Time.deltaTime;
-        }
-        else if (_charge > _maxCharge)
-        {
-            _charge = _maxCharge;
-        }
-    }
-
-    private void WeaponCooldownTime()
-    {
-        if (_currentCooldown > 0)
-        {
-            _currentCooldown -= Time.deltaTime;
-        }
-        else if (_currentCooldown < 0)
-        {
-            _currentCooldown = 0;
+            if (_comboTimeLeft > 0)
+            {
+                _comboTimeLeft -=Time.deltaTime;
+            }
+            else
+            {
+                _currentCombo = 0; _comboTimeLeft = 0;
+            }
         }
     }
 
     public override void OnPress()
     {
-        _isHeldDown=true;
+        if (_currentCooldown <= 0)
+        {
+            _isHeldDown = true;
+        }
     }
 
     public override void OnRelease()
     {
         if (_currentCooldown > 0)
-        { 
-            _charge = 0; 
+        {
+            ClearCharge();
             return; 
         }
 
@@ -67,6 +59,10 @@ public class Axe : Weapon
             {
                 _currentCombo = 0;
             }
+            else
+            {
+                _comboTimeLeft = _axeCombo[_currentCombo].Cooldown + _loseComboTime;
+            }
         }
         _charge = 0;
     }
@@ -76,5 +72,11 @@ public class Axe : Weapon
         _animator.SetTrigger(attack.AnimationName);
         _hitCollider.SetDamage(attack.Damage);
         _currentCooldown = attack.Cooldown;
+    }
+
+    public override void ClearAttacks()
+    {
+        base.ClearAttacks();
+        _currentCombo = 0;
     }
 }
